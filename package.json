@@ -1,0 +1,96 @@
+{
+  "name": "mitnick",
+  "version": "1.0.1",
+  "description": "Pre-install security analysis CLI for npm packages. Analyze packages before installation to detect vulnerabilities, malicious code, typosquatting, and supply chain attacks.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./cli": {
+      "import": "./dist/cli/index.js",
+      "types": "./dist/cli/index.d.ts"
+    }
+  },
+  "bin": {
+    "mitnick": "dist/cli/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/cli/index.js",
+    "test": "vitest run --exclude 'tests/integration/**'",
+    "test:watch": "vitest --exclude 'tests/integration/**'",
+    "test:coverage": "vitest run --coverage --exclude 'tests/integration/**'",
+    "test:integration": "vitest run tests/integration/",
+    "test:all": "vitest run",
+    "lint": "eslint src/ tests/",
+    "lint:fix": "eslint --fix src/ tests/",
+    "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\"",
+    "format:check": "prettier --check \"src/**/*.ts\" \"tests/**/*.ts\"",
+    "typecheck": "tsc --noEmit",
+    "validate": "npm run typecheck && npm run lint && npm run test",
+    "prepublishOnly": "npm run build",
+    "prepare": "husky"
+  },
+  "keywords": [
+    "security",
+    "npm",
+    "audit",
+    "vulnerability",
+    "supply-chain",
+    "malware",
+    "typosquatting",
+    "obfuscation",
+    "cli",
+    "analysis",
+    "pre-install"
+  ],
+  "author": "Murat Demirci (https://github.com/muratdemirci)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/muratdemirci/mitnick"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "dependencies": {
+    "@typescript-eslint/typescript-estree": "^8.0.0",
+    "chalk": "^5.3.0",
+    "commander": "^12.0.0",
+    "ora": "^8.0.0",
+    "semver": "^7.7.4",
+    "tar": "^7.0.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "@types/node": "^22.0.0",
+    "@types/semver": "^7.7.1",
+    "@typescript-eslint/eslint-plugin": "^8.57.1",
+    "@typescript-eslint/parser": "^8.57.1",
+    "@vitest/coverage-v8": "^2.0.0",
+    "eslint": "^9.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "prettier": "^3.3.0",
+    "typescript": "^5.6.0",
+    "typescript-eslint": "^8.57.1",
+    "vitest": "^2.0.0"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  }
+}
