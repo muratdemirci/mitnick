@@ -1,5 +1,5 @@
 {
-  "name": "mitnick",
+  "name": "mitnick-cli",
   "version": "1.0.0",
   "description": "Pre-install security analysis CLI for npm packages. Analyze packages before installation to detect vulnerabilities, malicious code, typosquatting, and supply chain attacks.",
   "type": "module",
