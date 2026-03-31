@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- **CLI**: `mitnick check` command for pre-install security analysis of npm packages
+- **CLI**: `mitnick-cli check` command for pre-install security analysis of npm packages
 - **CLI**: Support for checking multiple packages at once
 - **CLI**: `--json` flag for machine-readable JSON output
 - **CLI**: `--sarif` flag for SARIF v2.1.0 output (GitHub Security tab integration)
