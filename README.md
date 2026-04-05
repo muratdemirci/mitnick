@@ -13,13 +13,13 @@ npm supply chain attacks are escalating. In 2025 alone, packages like `debug` an
 ## Install
 
 ```bash
-npm install -g mitnick-cli
+npm install -g mitnick
 ```
 
 Or use directly with npx:
 
 ```bash
-npx mitnick-cli check express
+npx mitnick check express
 ```
 
 ## Usage
@@ -135,14 +135,14 @@ Exit code `1` means findings were found at or above the threshold. Exit code `0`
 
 ```yaml
 - name: Security check dependencies
-  run: npx mitnick-cli check --fail-on medium $(cat package.json | jq -r '.dependencies | keys[]')
+  run: npx mitnick check --fail-on medium $(cat package.json | jq -r '.dependencies | keys[]')
 ```
 
 ### SARIF upload to GitHub Security tab
 
 ```yaml
 - name: Run mitnick
-  run: npx mitnick-cli check --sarif express > results.sarif
+  run: npx mitnick check --sarif express > results.sarif
 
 - name: Upload SARIF
   uses: github/codeql-action/upload-sarif@v3

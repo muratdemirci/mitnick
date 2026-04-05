@@ -12,7 +12,7 @@ A clear description of the bug.
 
 ## Steps to Reproduce
 
-1. Run `mitnick-cli check ...`
+1. Run `mitnick check ...`
 2. ...
 3. See error
 

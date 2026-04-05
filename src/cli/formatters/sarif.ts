@@ -166,7 +166,7 @@ export class SarifFormatter implements Formatter {
             driver: {
               name: 'mitnick',
               version: pkg.version,
-              informationUri: 'https://github.com/mitnick-cli/mitnick',
+              informationUri: 'https://github.com/muratdemirci/mitnick',
               rules: buildRules(allFindings),
             },
           },
